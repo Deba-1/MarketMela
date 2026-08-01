@@ -6,7 +6,7 @@ const products = [
         price: "499",
         mrp: "₹999",
         discount: "50% off",
-        image: "french fries cutter.webp",
+        image: "images/french fries cutter.webp",
         link: "https://www.amazon.in/dp/B01BVDS1BE?tag=debasish08f-21" //[cite: 2]
     },
     {
