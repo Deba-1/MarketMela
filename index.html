@@ -4,6 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Market Mela - Best Deals Online</title>
+    
+    <!-- Favicons & Manifest -->
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+    <link rel="manifest" href="site.webmanifest">
+
     <style>
         :root {
             --primary: #F5A623;
@@ -82,7 +90,7 @@
 
     <header>
         <div class="nav-wrapper">
-            <a href="#" class="logo">MARKET<span>MELA</span></a>
+            <a href="index.html" class="logo">MARKET<span>MELA</span></a>
             <div class="search-icon" onclick="toggleSearch()">
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
             </div>
@@ -105,7 +113,9 @@
     <footer>
         <div class="back-to-top" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">Back to top</div>
         <div class="footer-links">
-            <a href="about.html">About Us</a> <a href="privacy.html">Privacy Policy</a> <a href="contact.html">Contact Us</a>
+            <a href="about.html">About Us</a> 
+            <a href="privacy.html">Privacy Policy</a> 
+            <a href="contact.html">Contact Us</a>
         </div>
         <div class="copyright">&copy; Market Mela. Associated with Amazon.</div>
     </footer>
@@ -121,7 +131,6 @@
         const prevBtn = document.getElementById('prevBtn');
         const nextBtn = document.getElementById('nextBtn');
         
-        // Product display settings
         const BATCH_SIZE = 24;
         
         const urlParams = new URLSearchParams(window.location.search);
@@ -133,7 +142,6 @@
             if(el.classList.contains('active')) document.getElementById('searchInput').focus();
         }
 
-        // Live Search Handler across all items
         searchInput.addEventListener('input', (e) => {
             const query = e.target.value.trim().toLowerCase();
 
@@ -213,7 +221,7 @@
 
             card.innerHTML = `
                 <div class="img-container">
-                    <img src="${item.image}" alt="${item.title}" loading="lazy">
+                    <img src="${item.image}" alt="${item.title}" loading="lazy" onerror="this.src='android-chrome-192x192.png';">
                 </div>
                 <div class="details">
                     <div class="title">${item.title}</div>
